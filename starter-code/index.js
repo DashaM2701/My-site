@@ -40,3 +40,18 @@ function postForm() {
       });
   });
 }
+ function showOnScroll() {
+    const elements = document.querySelectorAll(".scroll-animate");
+
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (rect.top < windowHeight - 100) {
+        el.classList.add("visible");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", showOnScroll);
+  window.addEventListener("load", showOnScroll);
